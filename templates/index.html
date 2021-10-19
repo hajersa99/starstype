@@ -1,0 +1,67 @@
+<html lang="en">
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Star Type Web API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/static/style.css">
+
+
+
+
+
+<style>
+ body{
+    
+    width: 100%;
+    height: 300px;
+    background-image: url('https://www14.0zz0.com/2021/10/13/16/915530712.jpeg');
+    background-repeat: no-repeat;
+    background-size: 99% 100%;
+    border: 2px solid #0c0c0c; }
+ 
+</style>
+
+
+
+
+</head>
+<body>
+ <div class="login">
+  <h1>Predict Star Type</h1>
+  <div>
+     <h2><b>This website is to perdict the stars type based on the input!</b></h2>
+    <p> <b>Please note that you have to input the 'Star color' and 'Spectral Class' in numbers</b></p>
+    
+    <p> <b>For Star color:</b> {'Red' : 0, 'Blue-white' : 1, 'White' : 2, 'White-Yellow' : 3,
+      'Pale yellow orange' : 4, 'Blue' : 5, 'Orange': 6, 'Yellowish' : 7, 'Orange-Red' : 8} </p>
+
+    <p> <b>For Spectral Class:</b> F{'M' : 0, 'B' : 1, 'A' : 2, 'F' : 3, 'O' : 4, 'K' : 5, 'G': 6} </p>
+    
+    </div>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="\predict" method="post">
+    	<input type="text" name="Temperature (K)" placeholder="Temperature (K)" required="required" />
+        <input type="text" name="Luminosity(L/Lo)" placeholder="Luminosity(L/Lo)" required="required" />
+		<input type="text" name="Radius(R/Ro)" placeholder="Radius(R/Ro)" required="required" />
+        <input type="text" name="Absolute magnitude(Mv)" placeholder="Absolute magnitude(Mv)" required="required" />
+        <input type="text" name="Star color" placeholder="Star color" required="required" />
+        <input type="text" name="Spectral Class" placeholder="Spectral Class" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
