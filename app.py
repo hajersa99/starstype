@@ -18,6 +18,7 @@ def home():
 @app.route('/predict',methods=['GET','POST'])
 @cross_origin()
 def predict():
+    text=''
     if request.method == "POST":
         '''
         For rendering results on HTML GUI
